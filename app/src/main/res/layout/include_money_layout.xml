@@ -4,10 +4,11 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:text="步行币"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:padding="10dp"
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <RelativeLayout
@@ -24,9 +25,11 @@
             android:id="@+id/check_btn"
             android:text="签到+1"
             android:textSize="18sp"
+            android:textColor="#fff"
             android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/ocean_blue"/>
     </RelativeLayout>
     <TextView
         android:textSize="25sp"

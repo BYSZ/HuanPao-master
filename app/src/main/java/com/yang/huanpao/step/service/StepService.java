@@ -28,7 +28,6 @@ import com.yang.huanpao.step.accelerometer.StepCount;
 import com.yang.huanpao.step.accelerometer.StepPassValueListener;
 import com.yang.huanpao.step.util.CountDownTimer;
 import com.yang.huanpao.step.util.UpdateCallBack;
-import com.yang.huanpao.ui.MainActivity;
 import com.yang.huanpao.ui.MainActivity2;
 import com.yang.huanpao.util.SharePreferencesUtil;
 
@@ -330,7 +329,7 @@ public class StepService extends Service implements SensorEventListener {
      * 更新步数通知
      */
     private void updateNotification() {
-        Intent hangIntent = new Intent(this, MainActivity.class);
+        Intent hangIntent = new Intent(this, MainActivity2.class);
         PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 0, hangIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         Notification notification = mBuilder.setContentTitle(getResources().getString(R.string.app_name))

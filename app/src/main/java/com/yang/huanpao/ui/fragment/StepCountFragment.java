@@ -1,7 +1,6 @@
 package com.yang.huanpao.ui.fragment;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -139,7 +138,7 @@ public class StepCountFragment extends BaseFragment{
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void initLineChart() {
         getAxisXLabel();//获取x坐标标注,及坐标数据
-        Line line = new Line(mPointValues).setColor(getResources().getColor(R.color.chart_yellow,null));
+        Line line = new Line(mPointValues).setColor(getResources().getColor(R.color.ocean_blue,null));
         List<Line> lines = new ArrayList<>();
         line.setShape(ValueShape.CIRCLE)
                 .setCubic(true)
@@ -154,9 +153,9 @@ public class StepCountFragment extends BaseFragment{
         //X轴部署
         Axis axisX = new Axis();//X轴
         axisX.setHasTiltedLabels(true)
-                .setTextColor(Color.GREEN)
+                .setTextColor(R.color.ocean_blue)
                 .setTextSize(10)
-                .setLineColor(Color.BLUE)
+                .setLineColor(R.color.ocean_blue)
                 .setValues(mAxisValue);
         axisX.setMaxLabelChars(9);
         lineChartData.setAxisXBottom(axisX);
@@ -165,10 +164,10 @@ public class StepCountFragment extends BaseFragment{
         Axis axisY = new Axis();
         axisY.setName("步数")
                 .setTextSize(10)
-        .setTextColor(Color.RED);
+        .setTextColor(R.color.ocean_blue);
         lineChartData.setAxisYLeft(axisY);
 
-        int colors[] = { 0xFF64AFE9 , 0xFF2590E2 };
+        int colors[] = { 0x00fafaf6 , 0x00fafaf6 };
         GradientDrawable bg = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
         int sdk = android.os.Build.VERSION.SDK_INT;
         if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {

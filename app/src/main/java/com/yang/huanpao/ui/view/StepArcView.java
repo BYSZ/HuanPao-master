@@ -81,14 +81,14 @@ public class StepArcView extends View{
         RectF rectF = new RectF(0 + borderWidth,borderWidth,2 * centerX - borderWidth,2 * centerX - borderWidth);
 
         /**
-         * 绘制整体的黄色圆弧
+         * 绘制整体的透明圆线
          */
-        drawArcYellow(canvas,rectF);
+        drawArcLucency(canvas,rectF);
 
         /**
-         * 绘制当前进度的红色圆弧
+         * 绘制当前进度的蓝色圆弧
          */
-        drawArcRed(canvas,rectF);
+        drawArcBlue(canvas,rectF);
         /**
          * ：绘制当前前进步数的数字
          */
@@ -107,34 +107,34 @@ public class StepArcView extends View{
      * @param rectF
      */
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void drawArcYellow(Canvas canvas, RectF rectF) {
-        mPaint.setColor(getResources().getColor(R.color.yellow,null));
+    private void drawArcLucency(Canvas canvas, RectF rectF) {
+        mPaint.setColor(getResources().getColor(R.color.grey,null));
         //结合处为圆弧
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         //设置画笔的样式Round SQUARE分别为圆形方形
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setAntiAlias(true);
-        mPaint.setStrokeWidth(borderWidth);
+
 
         canvas.drawArc(rectF,startAngle,angleLength,false,mPaint);
     }
 
 
     /**
-     * 第二步:绘制当前进度的红色圆弧
+     * 第二步:绘制当前进度的蓝色圆弧
      * @param canvas
      * @param rectF
      */
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void drawArcRed(Canvas canvas, RectF rectF) {
+    private void drawArcBlue(Canvas canvas, RectF rectF) {
         mPaint.reset();
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setAntiAlias(true);
         mPaint.setStrokeWidth(borderWidth);
-        mPaint.setColor(getResources().getColor(R.color.red,null));
+        mPaint.setColor(getResources().getColor(R.color.ocean_blue,null));
 
         canvas.drawArc(rectF,startAngle,currentAngleLength,false,mPaint);
     }
@@ -152,7 +152,7 @@ public class StepArcView extends View{
         mPaint.setTextSize(numberTextSize);
         Typeface font = Typeface.create(Typeface.SANS_SERIF,Typeface.NORMAL);
         mPaint.setTypeface(font);//字体风格
-        mPaint.setColor(getResources().getColor(R.color.red,null));
+        mPaint.setColor(getResources().getColor(R.color.ocean_blue,null));
         Rect bounds = new Rect();
         mPaint.getTextBounds(stepNumber,0,stepNumber.length(),bounds);
         canvas.drawText(stepNumber,centerX,getHeight()/2+bounds.height()/2,mPaint);

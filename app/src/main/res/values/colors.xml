@@ -8,5 +8,6 @@
     <color name="grey">#363636</color>
     <color name="ocean_blue">#40b1ed</color>
     <color name="chart_yellow">#cbe645</color>
+    <color name="lucency">#00fafaf6</color>
 
 </resources>
